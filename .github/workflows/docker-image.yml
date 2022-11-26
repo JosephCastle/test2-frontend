@@ -10,6 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # CORRER TESTS
+      # Checkout the Repo
+      - uses: actions/checkout@v2
+
+      # Install Node 12
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # Install dependencies
+      - run: npm install
+
+      # Run tests
+      - run: npm test
+    
+      # inicio docker
       -
         name: set up ciTest2MGomezJCastilloJ
         uses: docker/setup-qemu-action@v2
