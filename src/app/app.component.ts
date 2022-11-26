@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router: Router) { }
+  title: String = 'AngularCRUDApplication'
+  version: String = "Version 1"
 
-  HomeClick(){
+  constructor(private router: Router) {
+  }
+
+  HomeClick() {
     this.router.navigate(['Home']);
   }
 }
