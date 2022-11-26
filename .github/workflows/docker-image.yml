@@ -1,4 +1,4 @@
-name: ciTest2MGomezJCastillo
+name: ciTest2MGomezJCastilloJ
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       -
-        name: set up ciTest2MGomezJCastillo
+        name: set up ciTest2MGomezJCastilloJ
         uses: docker/setup-qemu-action@v2
       -
         name: set up Docker Buildx
