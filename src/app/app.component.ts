@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class AppComponent {
 
   title: String = 'AngularCRUDApplication'
-  version: String = "Version 1"
+  version: String = "Version 2.1"
 
   constructor(private router: Router) {
   }
