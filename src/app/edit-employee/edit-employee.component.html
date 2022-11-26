@@ -1,0 +1,80 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Update Invoice</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form #invoiceForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="InvoiceDate" class="p-t-b-10">Invoice Date<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="InvoiceDate" required maxlength="255"
+                     [(ngModel)]="editInvoiceForm.invoiceDate" name="InvoiceDate" #InvoiceDate="ngModel">
+              <div *ngIf="InvoiceDate.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!InvoiceDate.errors?.['required']">
+                  Invoice Date is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Biller" class="p-t-b-10">Biller<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Biller" required maxlength="255"
+                     [(ngModel)]="editInvoiceForm.biller" name="Biller" #Biller="ngModel">
+              <div *ngIf="Biller.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Biller.errors?.['required']">
+                  Biller is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Amount<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Amount" required maxlength="255"
+                     [(ngModel)]="editInvoiceForm.amount" name="Amount" #Amount="ngModel">
+              <div *ngIf="Amount.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Amount.errors?.['required']">
+                  Amount is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Description<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="Description" required [(ngModel)]="editInvoiceForm.description" name="Description"
+                        #Description="ngModel">></textarea>
+              <div *ngIf="Description.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Description.errors?.['required']">
+                  Description is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="EditInvoice(invoiceForm.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

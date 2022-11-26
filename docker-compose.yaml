@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+  web:
+    container_name: front-dev
+    build: ./Dockerfile # esto se cxxome el Dockerfile-dev
+    ports:
+      - 4200:80
+    volumes:
+      - ./dist/angular-crudapplication:/usr/share/nginx/html

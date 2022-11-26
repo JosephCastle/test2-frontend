@@ -1,0 +1,4 @@
+FROM nginx:alpine
+# copia la configuracion personalizada de nginx
+# esto abre un proxy afuera
+COPY nginx-dev.conf /etc/nginx/nginx.conf
