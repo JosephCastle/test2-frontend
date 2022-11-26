@@ -21,10 +21,11 @@ jobs:
           node-version: 12
 
       # Install dependencies
-      - run: npm install
+      #- run: npm install
 
       # Run tests
-      - run: npm test
+      - run: npm ci
+      - run: npm run test:prod
     
       # inicio docker
       -
